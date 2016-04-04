@@ -1,0 +1,665 @@
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+html{height: 100%;}
+/* end reset*/
+
+
+body {
+    height: 100%;
+	font: 15px/20px 'PT Sans', sans-serif;
+    background-color: #FFF;
+    color: #626262;
+}
+ol, ul {list-style: none;}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+a, a:hover {text-decoration: none;}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {clear: both;}
+
+.center {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.logo a{
+     float: left;
+}
+.logo img{
+  margin-top: 30px;
+}
+.logo_title{
+  margin: 35px 80px 0 15px;
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #31333e;
+  letter-spacing: -2px;
+}
+nav a {
+    float: left;
+    text-transform: uppercase;
+    color: #626262;
+    font-weight: bold;
+}
+
+/* _________ABOUT___drop menu_1_______ */
+
+#drop-menu { 
+    float: left; 
+} 
+/* */ 
+#ddmenu {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+/*  padding: 0 15px;*/
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  color: #8aa8bd;
+  font-size: 15px;
+}
+
+#ddmenu li a {
+  display: block;
+  float: left;
+  padding: 45px 18px 12px 17px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s linear;
+     -moz-transition: all 0.2s linear;
+       -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  font-size: 15px;
+    
+   background-color: #00aeff;
+   color: #fff;
+   font-weight: bold;
+    
+}
+#ddmenu li:hover > a { 
+    background-color: #00aeff;
+    color: #fff;
+    
+}
+
+#ddmenu ul {
+  position: absolute;
+  top: 88px;/*изменяем вsсоту подменю*/
+  width: 220px;
+  height: 170px;
+  background: #fff;
+  background: #e2e7ed;
+  display: none;
+  margin: 0;
+  padding: 0px 0;  
+  list-style: none;
+  z-index: 20;
+    
+}
+
+/* Стрелочки */
+#ddmenu ul:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: #e2e7ed transparent; 
+}
+
+#ddmenu ul:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 4px;
+}
+
+#ddmenu ul li { 
+  display: block; 
+  width: 100%; 
+  font-size: 0.9em;     
+}
+
+#ddmenu ul li a {
+  display: block;
+  width: 100%;
+  padding: 6px 7px;
+  line-height: 2.1em;
+  -webkit-transition: all 0.2s linear;
+     -moz-transition: all 0.2s linear;
+       -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background-color: #e2e7ed;/*серый фон в подменю*/
+  color: #31333e;
+  padding-left: 15px;
+  text-transform: lowercase;
+  text-transform: capitalize;
+}
+#ddmenu ul li a:hover {
+    background: #00aeff;
+    color: #fff;
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+/*_________drop menu_2_______*/
+#drop-menu-2 { 
+} 
+
+/* */  
+#ddmenu-2 {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  color: #8aa8bd;
+}
+
+#ddmenu-2 li a {
+  display: block;
+  float: left;
+  padding: 45px 18px 12px 17px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s linear;
+     -moz-transition: all 0.2s linear;
+       -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  font-size: 15px;
+}
+#ddmenu-2 li:hover > a { 
+    background-color: #fff;
+   color: #00aeff;
+}
+
+#ddmenu-2 ul {
+  position: absolute;
+  top: 88px;/*изменяем вsсоту подменю*/
+  left: 480px;
+  width: 228px;
+  height: 175px;
+  background: #fff;
+  background: #e2e7ed;
+  display: none;
+  margin: 0;
+  padding: 0px 0;  
+  z-index: 20;
+}
+
+/* Стрелочки */
+#ddmenu-2 ul:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: #e2e7ed transparent; 
+}
+
+#ddmenu-2 ul:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 4px;
+}
+
+#ddmenu-2 ul li { 
+  display: block; 
+  width: 100%; 
+  padding-top: 10px;
+}
+
+#ddmenu-2 ul li a {
+    display: block;
+    width: 100%;
+    padding: 6px 7px;
+    line-height: 2.1em;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    background-color: #e2e7ed;/*серый фон в подменю*/
+    color: #31333e;
+    padding-left: 14px;
+    color: #414244;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+#ddmenu-2 ul li a:hover {
+  background: #00aeff;
+     color: #fff;
+}
+
+/* _________SEARCH__________ */
+.search {
+    float: left;
+    display: inline-block;
+    width: 160px; /* Ширина поля с кнопкой */
+    border: 1px solid #f1f3f6; /* Параметры рамки */
+    height: 30px; /* Минимальная высота */
+    margin: 37px 0px 0px 60px;
+    padding: 0;
+   }
+
+ input[type="search"] {
+    border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 130px; /* Ширина поля */
+    vertical-align: text-top; /* Выравнивание */
+   }
+   input[type="submit"] {
+    width: 20px; /* Ширина кнопки */
+    height: 24px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+    background: url(../img/icon_search.png) no-repeat 50% 50%; /* Параметры фона */
+    margin-top: 2px;
+   }
+/*изменение стиля текста в текстовом поле*/
+::-webkit-input-placeholder { 
+    color: #a3a3a3;
+    font-style: italic;
+    padding-left: 8px;
+}
+::-moz-input-placeholder {
+    color: #a3a3a3;
+    font-style: italic;
+    padding-left: 8px;
+}
+/* ________BASKET__________ */
+.basket {
+    float: right;
+    width: 175px;
+    height: 77px;
+     
+    background: url(../img/basket.png) no-repeat;
+    background-color: #00aeff;
+    background-position: 18px 24px;
+} 
+.basket a {  
+    display: inline-block;
+    margin: 30px 0px 0px 70px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    color: #fff;
+}
+.basket a:hover {
+     color: #c5e6ff;
+}
+/* -----------CONTENT---------- */
+.content-title {
+    position: absolute;
+        margin: 70px 0 0 125px ;
+    color: #fff;
+    font-size: 44.88px;
+    z-index: 1;
+}
+.content-btn a {
+    position: absolute;
+    margin: 60px 0 0 800px ;
+    font-size: 22px;
+    height: 60px;
+    width: 225px;;
+    background-color: #fff;
+    text-align: center;
+    color: #535353;
+    padding: 20px 0px; /* Поля */
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #000; /* Цвет текста */
+     z-index: 1;
+  }
+ .content-btn a:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
+   }
+/* -----------SLIDER---------- */
+
+#slider-wrap { /* Оболочка слайдера и кнопок */
+	width:1140px; 
+     margin-top: 25px;
+	}
+#slider { /* Оболочка слайдера */
+	width: 1140px;
+	height: 605px;
+	overflow: hidden;
+	position:relative;
+}
+.slide{ /* Слайд */
+	width:100%;
+	height:100%;
+	}
+ /* Кнопки смены слайдов отключены */
+.sli-links {
+	margin-top:10px;
+	text-align:center;
+}
+.sli-links .control-slide {
+	margin: 2px;
+	display: inline-block;
+/*
+	width:16px;
+	height:16px;
+*/
+    height:0px;
+	overflow:hidden;
+	text-indent:-9999px;
+/*	background:url(radioBg.png) center bottom no-repeat;*/
+}
+.sli-links .control-slide:hover {
+	cursor:pointer;
+	background-position:center center;
+}
+.sli-links .control-slide.active {
+	background-position:center top;
+}
+/* Ссылка "Следующий" и "Педыдущий" */
+#prewbutton, #nextbutton { 
+	display:block;
+	width:30px;
+	height:100%;
+	position:absolute;
+	top:0;
+	overflow:hidden;
+	text-indent:-999px;
+	background:url(../img/arrows.png) left center no-repeat;
+	opacity:0.8;
+	z-index:3;
+	outline:none !important;
+}
+#prewbutton {
+    left:10px;
+}
+#nextbutton {
+	right:10px;
+	background:url(../img/arrows.png) right center no-repeat;
+}
+#prewbutton:hover, #nextbutton:hover{
+	opacity:1;
+}
+/* -------------MEDIA------------ */
+.media {
+    width: 950px;
+    margin: 0 auto;
+/*    border: 1px solid green;*/
+}
+/*устанавливаем 3 картинки в ниших блоках как фон*/
+.apple {
+    float: left;
+    background: url(../img/ic-apple.png) no-repeat ;       
+}
+.android {
+    margin:  0 4.75% 0 4.75%;/*отступы центрального блока справ и слева*/
+    background: url(../img/ic-android.png) no-repeat ;     
+}
+.mobile-apps {
+    float: right;
+    background: url(../img/ic-mobile-apps.png) no-repeat ;     
+}
+/*3 блока ставим в ряд с помощью float и даем каждому блоку 1/3 ширины с помощью width: 30%*/
+.media-item {
+    display: inline-block;
+    width: 30.16%;
+    height: 320px;
+    margin-top: 50px;  
+    text-align: center;
+    background-position: 92.5px 60px;
+/*    border: 1px solid orange;*/
+}
+
+h2.title {
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;   
+}
+.media-item p {
+    margin-top: 155px;
+}
+.media-btn {
+    margin-top: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #00aeff;
+}
+.media-btn a {
+    color: #00aeff;
+    font-weight: bold;
+}
+/*--------------POPULAR----------------*/
+
+/*3 блока ставим в ряд с помощью float и даем каждому блоку 1/3 ширины с помощью width: 30%*/
+.popular {
+/*    border: 2px solid pink;*/
+}
+.popular-header {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 70px;
+    text-transform: uppercase;
+}
+.popular-item-1, .popular-item-2, .popular-item-3 {
+    display: inline-block;
+    width: 31.75%;
+    height: 522px;
+    margin-top: 5px; 
+    padding-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    border: 1px solid #cccccc;
+}
+
+.popular-item-1 {
+    float: left;  
+}
+.popular-item-2 {
+    margin:  5px 2.3% 0 2.3%; /*отступы центрального блока справ и слева*/ 
+}
+.popular-item-3 {
+    float: right;   
+}
+.popular-item img {
+    margin-top: 20px;
+}
+.popular-btn img, .more-btn img  {
+    margin-top: 0px;
+}
+.popular-title {
+    width: 290px;
+    margin: 25px 0 0 20px;
+    font-size: 18px;
+    text-align: left;
+    text-transform: uppercase;
+/*    border: 2px solid pink;*/
+}
+.wrapper-price {
+    width: 250px;
+    margin: 30px 0px 0 90px;
+    text-align: right;
+/*    border: 2px solid pink;*/
+}
+.price-line-through p{
+    text-decoration: line-through;
+    float: left;
+    font-size: 24px;
+    color: #7e7e7e;
+}
+.price p {
+    float: right;
+    font-size: 30px;
+    color: #1772d8;
+}
+.wrapper_popular-btn form {
+    float: left;
+    display: inline-block;
+}
+.buy-btn, .more-btn {
+    width: 145px;
+    height: 40px;
+    cursor: pointer
+}
+.buy-btn img, .more-btn img{
+     margin-top: 0px; 
+}
+.buy-btn {
+   background-color: #00aeff;
+   border-color: #00aeff;
+   margin: 42px 0 0  22px;;
+}
+.more-btn {
+   margin: 42px 0 0  24px;;
+   background-color: #9f87c0;
+   border-color: #9f87c0;
+}
+.action, .new {
+   position: absolute; 
+   position: absolute;
+   margin: -287px 0 0 239px ;
+}
+.rate {
+    margin-top: 40px;
+}
+.rate-1 {
+    display: inline-block;
+    width: 80px;
+    height: 15px;
+    margin: 0 0px;
+    background: url(../img/star-rate.png) no-repeat;
+}
+.rate-2 {
+    display: inline-block;
+    width: 65px;
+    height: 15px;
+    margin: 0 300px;
+    background: url(../img/star-rate.png) no-repeat;
+}
+.rate-3 {
+    display: inline-block;
+    width: 80px;
+    height: 15px;
+    margin: 0 20px;
+    background: url(../img/star-rate.png) no-repeat;
+}
+/*--------------FOOTER----------------*/
+#footer {
+    height: 167px;
+    margin-top: 77px;
+    background-color: #31333e;
+}
+.logo-footer a{
+     float: left;
+}
+.logo-footer img{
+   margin-top: 30px;
+}
+.logo-footer-title{
+   margin: 35px 55px 0 15px;
+   font-size: 35px;
+   line-height: 35px;
+   font-weight: bold;
+   text-transform: uppercase;
+   color: #fff;
+   letter-spacing: -2px;
+}
+.footer-nav li{
+    display: inline-block;
+    float: right;
+    margin: 23px 0 0 10px;
+    color: #fff;
+}
+.footer-nav a {
+    color: #fff; 
+    text-transform: uppercase;
+}
+/* -------------------------оформление соц сетей---------------------- */
+.social {
+    margin-top: 10px;
+    float: left;
+}
+.social p{
+   color: #fff;
+    margin-bottom: 7px;
+}
+.social a {
+    display: inline-block;
+    margin: 0 10px 12px 0;
+    width: 36px;
+    height: 36px;
+    background: url(../img/social-sprite.png) no-repeat; /*задаем фоновую картинку наши социальные сети*/
+    border: 1px solid #222;
+     -webkit-border-radius: 10%;
+       -moz-border-radius: 10%;
+         -o-border-radius: 10%;
+            border-radius: 10%;
+}
+/* -----------------FB---------------------- */
+.social a.ic-fb {
+    background-color: #3b5998;
+    background-position: 0 0px;
+}
+/* ----------------TW----------------------- */
+.social a.ic-tw {
+    background-color: #00aeff;
+    background-position: 0 -40px;
+}
+/* -----------------VK---------------------- */
+.social a.ic-vk {
+    background-color: #2766e9;
+    background-position: 0 -80px;
+}
+/* -----------------GL---------------------- */
+.social a.ic-gl {
+    background-color: #f24841;
+    background-position: 0 -120px;
+}
+.footer-phone {
+    float: left;
+    margin: 0 0 0 110px;
+    color: #fff;
+}

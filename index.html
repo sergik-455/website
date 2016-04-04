@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title> Web site</title>
+        <meta charset="utf-8"> 
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700' rel='stylesheet' type='text/css'>   
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css">       
+   
+<!-- __________ slider ______________ -->
+<script>          
+(function ($) {
+var hwSlideSpeed = 700;
+var hwTimeOut = 3000;
+var hwNeedLinks = true;
+
+$(document).ready(function(e) {
+	$('.slide').css(
+		{"position" : "absolute",
+		 "top":'0', "left": '0'}).hide().eq(0).show();
+	var slideNum = 0;
+	var slideTime;
+	slideCount = $("#slider .slide").size();
+	var animSlide = function(arrow){
+		clearTimeout(slideTime);
+		$('.slide').eq(slideNum).fadeOut(hwSlideSpeed);
+		if(arrow == "next"){
+			if(slideNum == (slideCount-1)){slideNum=0;}
+			else{slideNum++}
+			}
+		else if(arrow == "prew")
+		{
+			if(slideNum == 0){slideNum=slideCount-1;}
+			else{slideNum-=1}
+		}
+		else{
+			slideNum = arrow;
+			}
+		$('.slide').eq(slideNum).fadeIn(hwSlideSpeed, rotator);
+		$(".control-slide.active").removeClass("active");
+		$('.control-slide').eq(slideNum).addClass('active');
+		}
+if(hwNeedLinks){
+var $linkArrow = $('<a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>')
+	.prependTo('#slider');		
+	$('#nextbutton').click(function(){
+		animSlide("next");
+		return false;
+		})
+	$('#prewbutton').click(function(){
+		animSlide("prew");
+		return false;
+		})
+}
+	var $adderSpan = '';
+	$('.slide').each(function(index) {
+			$adderSpan += '<span class = "control-slide">' + index + '</span>';
+		});
+	$('<div class ="sli-links">' + $adderSpan +'</div>').appendTo('#slider-wrap');
+	$(".control-slide:first").addClass("active");
+	$('.control-slide').click(function(){
+	var goToNum = parseFloat($(this).text());
+	animSlide(goToNum);
+	});
+	var pause = false;
+	var rotator = function(){
+			if(!pause){slideTime = setTimeout(function(){animSlide('next')}, hwTimeOut);}
+			}
+	$('#slider-wrap').hover(	
+		function(){clearTimeout(slideTime); pause = true;},
+		function(){pause = false; rotator();
+		});
+	rotator();
+});
+})(jQuery);
+
+</script>
+<!-- _________ end _ slider ________ -->             
+        </head>
+<body>
+    <div id="wrapper">
+<!-- _________header _________ -->
+        <div id="header"> 
+            <div class="center clearfix">               
+                <div class="logo">
+                    <a href="#"><img src="img/logo.png" alt="logo" title="logo"></a>
+                    <a class="logo_title" href="#"> colorbox</a>
+                </div>            
+    <div class="nav">    
+     <nav>               
+       <div id="drop-menu">   
+          <ul id="ddmenu">
+            <li><a href="#">О нас</a>
+              <ul>
+                <li><a href="#">Web Design </a></li>
+                <li><a href="#"> Wordpress Design </a></li>
+                <li><a href="#"> Mobile Apps </a></li>
+                <li><a href="#">  Social Media </a></li>
+              </ul>
+            </li>
+          </ul>
+       </div>                      
+                    
+        <div id="drop-menu-2">   
+          <ul id="ddmenu-2">
+             <li><a href="#"> apple store </a> 
+              <ul>
+                <li><a href="#"> Apple iPhone </a></li>
+                <li><a href="#">Apple iPad </a></li>
+                <li><a href="#">Apple iPod </a></li>
+                <li><a href="#"> Apple MacBook </a></li>
+                <li><a href="#"> Apple iMac App  </a></li>
+              </ul>         
+             </li>
+              <li><a href="#"> планшеты </a> </li>
+              <li><a href="#"> ноутбуки </a> </li>
+          </ul>
+       </div>  
+    </nav>
+   </div>
+                
+    <form>
+        <div class="search">
+            <input type="search"  placeholder="Поиск" value="" name="q">
+            <input type="submit" value="">
+        </div>
+    </form>
+    <div class="basket ">
+        <a class="" href="#"> 0  товар(ов) </a>
+    </div>                 
+  </div>
+</div>
+        
+<!-- _________content _________ -->           
+        <div id="content"> 
+            <div class="center">          
+                <div class="slider">
+                    <div class="content-title"> 
+                        <h1> We are a Creative Digital Agency </h1>
+                    </div>
+                    <div class="content-btn"> 
+                        <a href="#"> Подробнее </a>
+                    </div>
+                    
+                    <!-- _________Slider _________ --> 
+                     <div id="slider-wrap">
+                        <div id="slider">
+                            <div class="slide"><img src="img/banner.jpg" width="1140" height="605" alt="" title=""></div>
+                            <div class="slide"><img src="img/banner.jpg" width="1140" height="605" alt="" title=""></div>
+                            <div class="slide"><img src="img/banner.jpg" width="1140" height="605" alt="" title=""></div>
+                            <div class="slide"><img src="img/banner.jpg" width="1140" height="605" alt="" title=""></div>
+                        </div>
+                    </div>                   
+                </div>             
+                <div class="media clearfix">
+                    <div class="media-item apple">
+                        <h2 class="title"> Apple </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus, lacus ac commodo volutpat, felis odio pulvinar enim, non dapibus mauris nulla sed ipsum. </p>
+                        <div class="media-btn"><a  href="#"> read more </a> </div>                       
+                    </div> 
+                     <div class="media-item android">
+                         <h2 class="title"> Android </h2>
+                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus, lacus ac commodo volutpat, felis odio pulvinar enim, non dapibus mauris nulla sed ipsum. </p>
+                        <div class="media-btn"><a  href="#"> read more </a> </div>
+                    </div> 
+                     <div class="media-item mobile-apps">
+                        <h2 class="title"> Mobile Apps </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus, lacus ac commodo volutpat, felis odio pulvinar enim, non dapibus mauris nulla sed ipsum. </p>
+                        <div class="media-btn"><a  href="#"> read more </a> </div>
+                    </div> 
+                </div>
+               
+ <!-- _________popular _________ -->                
+                <div class="popular ">
+                    <div class="popular-header">Популярные товары </div>
+                    
+                    <div class="rate">
+                        <div class="rate-1">
+                            <div style="width: 100%;"></div>
+                        </div>
+                        <div class="rate-2">
+                            <div style="width: 80%;"></div>
+                        </div>
+                        <div class="rate-3">
+                            <div style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="popular-item-1 ">
+                       <img src="img/popular-item-1.jpg" alt="">
+                        
+                        <div class="action">
+                            <img src="img/action.png" alt="">
+                        </div>
+                        
+                        <div class="popular-title"> 
+                            <p> Планшет Apple iPad 4 Wi-Fi+4G  16GB Black (MD522) </p>
+                        </div>
+                        <div class="wrapper-price clearfix">
+                            <div class="price-line-through">
+                                <p > 10100 грн </p>
+                            </div> 
+                             <div class="price">
+                                <p > 9199 грн </p>
+                            </div>
+                        </div>
+                        <div class="wrapper_popular-btn">                             
+                            <form action="#">
+                                <button class="buy-btn" type="submit">
+                                    <img src="img/btn-buy.png" alt="Зонтик" style="vertical-align: middle">
+                                </button>
+                            </form>
+                            <form action="#">
+                                 <button class="more-btn" type="submit">
+                                     <img src="img/btn-more.png" alt="Зонтик" style="vertical-align: middle">
+                                 </button>
+                            </form>                            
+                        </div> 
+                    </div>
+                    
+                    <div class="popular-item-2 ">
+                       <img src="img/popular-item-2.jpg" alt="" title="">
+                        <div class="popular-title"> 
+                            <p> iPhone 5s 16GB (Space Gray)  Refurbished by Apple Slim Box </p>
+                        </div>
+                        <div class="wrapper-price clearfix">
+                            <div class="price-line-through">
+                                <p >  </p>
+                            </div> 
+                             <div class="price">
+                                <p > 7199 грн </p>
+                            </div>
+                        </div>
+                        <div class="wrapper_popular-btn">                             
+                            <form action="#">
+                                <button class="buy-btn" type="submit">
+                                    <img src="img/btn-buy.png" alt="Зонтик" style="vertical-align: middle">
+                                </button>
+                            </form>
+                            <form action="#">
+                                 <button class="more-btn" type="submit">
+                                     <img src="img/btn-more.png" alt="Зонтик" style="vertical-align: middle">
+                                 </button>
+                            </form>                            
+                        </div>
+                    </div>
+                    
+                    <div class="popular-item-3">
+                       <img src="img/popular-item-3.jpg" alt="" title="">
+                        
+                         <div class="new">
+                            <img src="img/new.png" alt="">
+                        </div>
+                        
+                        <div class="popular-title"> 
+                            <p> Samsung G900H Galaxy S5 16Gb  (Shimmery White) </p>
+                        </div>
+                        <div class="wrapper-price clearfix">
+                            <div class="price-line-through">
+                                <p >  </p>
+                            </div> 
+                             <div class="price">
+                                <p > 10000 грн </p>
+                            </div>
+                        </div>
+                        <div class="wrapper_popular-btn">                             
+                            <form action="#">
+                                <button class="buy-btn" type="submit">
+                                    <img src="img/btn-buy.png" alt="Зонтик" style="vertical-align: middle">
+                                </button>
+                            </form>
+                            <form action="#">
+                                 <button class="more-btn" type="submit">
+                                     <img src="img/btn-more.png" alt="Зонтик" style="vertical-align: middle">
+                                 </button>
+                            </form>                            
+                        </div> 
+                    </div>
+                </div> <!-- popular -->         
+            </div> <!-- center -->
+        </div> <!-- content -->
+        
+<!-- -_________ footer _________ -->            
+        <div id="footer"> 
+            <div class="center clearfix">
+                <div class="logo-footer">
+                    <a href="#"><img src="img/logo.png" alt="logo" title="logo"></a>
+                    <a class="logo-footer-title" href="#"> colorbox</a>
+                </div>
+                <aside class="footer-nav clearfix"> 
+                     <ul>   
+                        <li><a href="#"> контакты </a> </li>
+                         <li> | </li>
+                        <li><a href="#"> о магазине </a> </li>
+                         <li> | </li>
+                        <li><a href="#"> гарантия </a> </li>
+                         <li> | </li>
+                        <li><a href="#"> оплата </a> </li>
+                         <li> | </li>
+                        <li><a href="#"> доставка </a> </li>
+                          <li> | </li>
+                        <li><a href="#"> ноутбуки  </a> </li>
+                          <li> | </li>
+                        <li><a href="#"> планшеты </a> </li>
+                          <li> | </li>
+                        <li><a href="#"> apple store </a> </li>
+                          <li> | </li>
+                        <li><a href="#"> о нас </a> </li>
+                   </ul>
+                </aside>
+                
+                <div class="social">
+                    <p>Мы в соцсетях: </p>
+<!--&nbsp;- єто специальный символ в html котор назыв "неразрывный пробел", это нужно для того чтобы избежать ошибок в старых браузерах при наведении -->
+                    <a href="#" class="ic-fb">&nbsp; </a> 
+                    <a href="#" class="ic-tw">&nbsp; </a>
+                    <a href="#" class="ic-vk">&nbsp; </a>
+                    <a href="#" class="ic-gl">&nbsp; </a>
+                </div>
+                <div class="footer-phone"> 
+                    <p>+ 380 (00) 000 00 00 </p> 
+                    <p>+ 380 (00) 000 00 00 </p>
+                    <a href="#"><img src="img/request-call.png" alt="" title=""></a>
+                </div>              
+            </div>  <!-- center -->
+        </div>      <!-- footer -->      
+    </div>          <!-- fowraperr -->  
+    
+    
+    <script type="text/javascript">
+$(document).ready(function(){
+  $('a').on('click', function(e){
+    e.preventDefault();
+  });
+    
+  $('#ddmenu li').hover(function () {
+     clearTimeout($.data(this,'timer'));
+     $('ul',this).stop(true,true).slideDown(200);
+  }, function () {
+    $.data(this,'timer', setTimeout($.proxy(function() {
+      $('ul',this).stop(true,true).slideUp(200);
+    }, this), 100));
+  });
+
+});
+</script>
+    
+       <script type="text/javascript">
+$(document).ready(function(){
+  $('a').on('click', function(e){
+    e.preventDefault();
+  });
+    
+  $('#ddmenu-2 li').hover(function () {
+     clearTimeout($.data(this,'timer'));
+     $('ul',this).stop(true,true).slideDown(200);
+  }, function () {
+    $.data(this,'timer', setTimeout($.proxy(function() {
+      $('ul',this).stop(true,true).slideUp(200);
+    }, this), 100));
+  });
+
+});
+</script>
+
+    
+</body>
+</html>
